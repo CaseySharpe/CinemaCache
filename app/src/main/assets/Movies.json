@@ -53,6 +53,137 @@
       "rating": "5",
       "genre": "Drama",
       "profileFileName": "color_purple_poster"
+    },
+    {
+      "movieTitle": "Spirited Away",
+      "releaseDate": "March 28, 2003",
+      "director": "Hayao Miyazaki",
+      "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+      "rating": "8.6",
+      "imageID": "1",
+      "genre": "Action",
+      "profileFileName": "spirited_away_poster"
+    },
+
+    {
+      "movieTitle": "Where the Crawdads Sing",
+      "releaseDate": "July 15, 2022",
+      "director": "Olivia Newman",
+      "description": "From the best-selling novel comes a captivating mystery. Where the Crawdads Sing tells the story of Kya, an abandoned girl who raised herself to adulthood in the dangerous marshlands of North Carolina.",
+      "rating": "7.1",
+      "imageID": "1",
+      "genre": "Drama",
+      "profileFileName": "where_crawdads_poster"
+    },
+
+    {
+      "movieTitle": "Interstellar",
+      "releaseDate": "November 7, 2014",
+      "director": "Christopher Nolan",
+      "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+      "rating": "8.6",
+      "imageID": "1",
+      "genre": "Scifi",
+      "profileFileName": "interstellar_poster"
+    },
+
+    {
+      "movieTitle": "Grave of the Fireflies",
+      "releaseDate": "July 26, 1989",
+      "director": "Isao Takahata",
+      "description": "A young boy and his little sister struggle to survive in Japan during World War II.",
+      "rating": "8.5",
+      "imageID": "1",
+      "genre": "Drama",
+      "profileFileName": "grave_fireflies_poster"
+    },
+
+    {
+      "movieTitle": "Reservoir Dogs",
+      "releaseDate": "September 2, 1992",
+      "director": "Quentin Tarantino",
+      "description": "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
+      "rating": "8.3",
+      "imageID": "1",
+      "genre": "Horror",
+      "profileFileName": "reservoir_dogs_poster"
+    },
+
+    {
+      "movieTitle": "Up",
+      "releaseDate": "May 29, 2009",
+      "director": "Pete Docter",
+      "description": "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.",
+      "rating": "8.3",
+      "imageID": "1",
+      "genre": "Comedy",
+      "profileFileName": "up_poster"
+    },
+
+    {
+      "movieTitle": "Taxi Driver",
+      "releaseDate": "February 9, 1976",
+      "director": "Martin Scorsese",
+      "description": "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action.",
+      "rating": "8.2",
+      "imageID": "1",
+      "genre": "Drama",
+      "profileFileName": "taxi_driver_poster"
+    },
+
+    {
+      "movieTitle": "Batman Begins",
+      "releaseDate": "June 15, 2005",
+      "director": "Christopher Nolan",
+      "description": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption.",
+      "rating": "8.2",
+      "imageID": "1",
+      "genre": "Action",
+      "profileFileName": "batman_begins_poster"
+    },
+
+    {
+      "movieTitle": "The Sixth Sense",
+      "releaseDate": "August 6, 1999",
+      "director": "M. Night Shyamalan",
+      "description": "A frightened, withdrawn Philadelphia boy who communicates with spirits seeks the help of a disheartened child psychologist.",
+      "rating": "8.2",
+      "imageID": "1",
+      "genre": "Horror",
+      "profileFileName": "sixth_sense_poster"
+    },
+
+
+    {
+      "movieTitle": "Prisoners",
+      "releaseDate": "September 20, 2013",
+      "director": "Denis Villeneuve",
+      "description": "When Keller Dover's daughter and her friend go missing, he takes matters into his own hands as the police pursue multiple leads and the pressure mounts.",
+      "rating": "8.1",
+      "imageID": "1",
+      "genre": "Drama",
+      "profileFileName": "prisoners_poster"
+    },
+
+    {
+      "movieTitle": "The Grand Budapest Hotel",
+      "releaseDate": "March 28, 2014",
+      "director": "Wes Anderson",
+      "description": "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.",
+      "rating": "8.1",
+      "imageID": "1",
+      "genre": "Action",
+      "profileFileName": "grand_budapest_poster"
+    },
+    {
+      "movieTitle": "How to Train Your Dragon",
+      "releaseDate": "March 26, 2010",
+      "director": "Dean DeBlois",
+      "description": "A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.",
+      "rating": "8.1",
+      "imageID": "1",
+      "genre": "Comedy",
+      "profileFileName": "train_dragon_poster"
     }
   ]
 }

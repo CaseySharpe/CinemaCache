@@ -17,7 +17,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class DetailViewActivity extends AppCompatActivity implements View.OnClickListener  {
 
@@ -69,7 +68,7 @@ public class DetailViewActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.back_button) {
+        if (id == R.id.add_to_watchlist_main) {
             Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
             startActivity(movieListIntent);
             finish();

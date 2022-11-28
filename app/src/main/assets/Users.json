@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+    "username": "sampleuser",
+    "password": "password",
+    "userWatchList": ["The Matrix", "The Color Purple"]
+  }
+  ]
+}

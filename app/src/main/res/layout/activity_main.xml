@@ -68,13 +68,13 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:iconTint="?attr/actionMenuTextColor"
-        app:layout_constraintEnd_toStartOf="@+id/back_button"
+        app:layout_constraintEnd_toStartOf="@+id/add_to_watchlist_main"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/movie_title" />
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/add_to_watchlist_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"

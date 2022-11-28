@@ -1,19 +1,14 @@
 package com.example.cinemacachefinal;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +28,7 @@ public class TopMovieListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_movie_list);
 
-        recyclerView = findViewById(R.id.recycler_top_movies);
+        recyclerView = findViewById(R.id.recycler_watchlist);
         movieListAdapter = new MovieListAdapter(this, getMovieList());
         recyclerView.setAdapter(movieListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -100,6 +95,7 @@ public class TopMovieListActivity extends AppCompatActivity {
             byte[] bufferData = new byte[fileSize];
             inputStream.read(bufferData);
             json = new String(bufferData, "UTF-8");
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
             return null;

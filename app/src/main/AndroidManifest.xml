@@ -13,22 +13,25 @@
         android:theme="@style/Theme.CinemaCacheFinal"
         tools:targetApi="31">
         <activity
+            android:name=".WatchListActivity"
+            android:exported="false"
+            android:label="My Watchlist"/>
+        <activity
             android:name=".TopMovieListActivity"
             android:exported="false"
-            android:label="Top Movies"/>
+            android:label="Top Movies" />
         <activity
             android:name=".DetailViewActivity"
             android:exported="false"
-            android:label="Detail View"/>
+            android:label="Detail View" />
         <activity
             android:name=".FindMoviesActivity"
             android:exported="false"
-            android:label="Find Movies"/>
+            android:label="Find Movies" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="Find Movies"
-            >
+            android:label="Find Movies">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

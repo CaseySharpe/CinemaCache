@@ -109,7 +109,7 @@
         tools:layout_editor_absoluteX="16dp">
 
         <Button
-            android:id="@+id/back_button"
+            android:id="@+id/add_to_watchlist_main"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
