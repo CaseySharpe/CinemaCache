@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@color/drk_gray"
+    android:orientation="horizontal"
+    android:padding="6dp">
+
+    <ImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:contentDescription="TODO"
+        android:cropToPadding="false"
+        android:maxHeight="310dp"
+        android:scaleType="fitStart"
+        app:srcCompat="@drawable/good_fellas_poster" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="8dp">
+
+        <TextView
+            android:id="@+id/movie_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movie_title"
+            android:textColor="@color/lt_green"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movie_list_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movie_genre"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/movie_list_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="6"
+            android:text="@string/movie_description"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/movie_list_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/movie_rating"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

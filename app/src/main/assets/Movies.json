@@ -1,0 +1,58 @@
+{
+  "movies": [
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "releaseDate": "September 22, 1994",
+      "director": "Frank Darabont",
+      "description": "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes. While there, he forms a friendship with Red (Morgan Freeman), experiences brutality of prison life, adapts, helps the warden, etc., all in 19 years.",
+      "rating": "5",
+      "genre": "Drama",
+      "profileFileName": "shawshank_poster"
+    },
+    {
+      "movieTitle": "The Matrix",
+      "releaseDate": "March 31, 1999",
+      "director": "Lilly Wachowski",
+      "description": "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
+      "rating": "5",
+      "genre": "Action",
+      "profileFileName": "matrix_poster"
+    },
+    {
+      "movieTitle": "Bridesmaids",
+      "releaseDate": "April 28, 2011",
+      "director": "Paul Feig",
+      "description": "Annie (Kristen Wiig) is a single woman whose own life is a mess, but when she learns that her lifelong best friend, Lillian (Maya Rudolph), is engaged, she has no choice but to serve as the maid of honor. Though lovelorn and almost penniless, Annie, nevertheless, winds her way through the strange and expensive rituals associated with her job as the bride's go-to gal. Determined to make things perfect, she gamely leads Lillian and the other bridesmaids down the wild road to the wedding.",
+      "rating": "5",
+      "genre": "Comedy",
+      "profileFileName": "bridesmaids_poster"
+    },
+    {
+      "movieTitle": "GoodFellas",
+      "releaseDate": "September 19, 1990",
+      "director": "Martin Scorsese",
+      "description": "A young man grows up in the mob and works very hard to advance himself through the ranks. He enjoys his life of money and luxury, but is oblivious to the horror that he causes. A drug addiction and a few mistakes ultimately unravel his climb to the top. Based on the book Wiseguy by Nicholas Pileggi.",
+      "rating": "5",
+      "genre": "Drama",
+      "profileFileName": "good_fellas_poster"
+    },
+    {
+      "movieTitle": "Halloween",
+      "releaseDate": "October 25, 1978",
+      "director": "John Carpenter",
+      "description": "On a cold Halloween night in 1963, six year old Michael Myers brutally murdered his 17-year-old sister, Judith. He was sentenced and locked away for 15 years. But on October 30, 1978, while being transferred for a court date, a 21-year-old Michael Myers steals a car and escapes Smith's Grove. He returns to his quiet hometown of Haddonfield, Illinois, where he looks for his next victims.",
+      "rating": "5",
+      "genre": "Horror",
+      "profileFileName": "halloween_poster"
+    },
+    {
+      "movieTitle": "The Color Purple",
+      "releaseDate": "December 18, 1985",
+      "director": "Steven Spielberg",
+      "description": "An epic tale spanning forty years in the life of Celie (Whoopi Goldberg), an African-American woman living in the South who survives incredible abuse and bigotry. After Celie's abusive father marries her off to the equally debasing Mister Albert Johnson (Danny Glover), things go from bad to worse, leaving Celie to find companionship anywhere she can. She perseveres, holding on to her dream of one day being reunited with her sister in Africa. Based on the novel by Alice Walker.",
+      "rating": "5",
+      "genre": "Drama",
+      "profileFileName": "color_purple_poster"
+    }
+  ]
+}
