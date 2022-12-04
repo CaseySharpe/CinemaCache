@@ -154,6 +154,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(movieListIntent);
             return true;
         }
+        else if(item.getItemId() == R.id.navigation_register){
+            Intent registerIntent = new Intent(this, RegisterActivity.class);
+            startActivity(registerIntent);
+            
+            return true;
+        }
 
         return false;
     }

@@ -1,9 +1,14 @@
 <resources>
         <string name="app_name">CinemaCache</string>
         <string name="title_watchlist">My Watchlist</string>
-        <string name="title_top_movies">Top Movies</string>
+
         <string name="title_find_movies">Find Movies</string>
         <string name="title_reviews">My Reviews</string>
+        <string name="title_top_movies">Top Movies</string>
+        <string name="title_user">User</string>
+        <string name="title_register">Register</string>
+        <string name="title_login">Login</string>
+
         <string name="movie_title">The Matrix</string>
         <string name="movie_genre">Action</string>
         <string name="movie_description">Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question. What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.</string>
@@ -19,4 +24,16 @@
         <string name="genre_select_action">Action</string>
         <string name="genre_select_scifi">Sci-fi</string>
         <string name="genre_select_drama">Drama</string>
+
+        <string name="register_label">Register</string>
+        <string name="login_label">Login</string>
+        <string name="first_name_label">First name</string>
+        <string name="last_name_label">Last name</string>
+        <string name="email_label">Email</string>
+        <string name="password_label">Password</string>
+        <string name="first_name_hint">First name</string>
+        <string name="last_name_hint">Last name</string>
+        <string name="email_hint">Last name</string>
+        <string name="register_button">Register</string>
+
 </resources>
