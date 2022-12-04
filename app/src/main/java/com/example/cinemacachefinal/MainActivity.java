@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -127,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(!this.user.getUserWatchlist().contains(movieTitle.getText().toString())){
                 this.user.addToUserWatchlist(movieTitle.getText().toString());
             }
+            Button button = findViewById(R.id.add_to_watchlist_main);
+            Snackbar.make(button, R.string.add_watchlist_message, Snackbar.LENGTH_LONG).show();
         }
         //TODO send to details page when movie poster is clicked
 //        else if (id == R.id.moviePoster){
@@ -152,6 +156,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent movieListIntent = new Intent(this, WatchListActivity.class);
             movieListIntent.putExtra("username", user.getUsername());
             startActivity(movieListIntent);
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_register){
+            Intent registerIntent = new Intent(this, RegisterActivity.class);
+            startActivity(registerIntent);
+            
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_reviews){
+            Intent reviewIntent = new Intent(this, ReviewActivity.class);
+            startActivity(reviewIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_find_movies){
+            Intent findMoviesIntent = new Intent(this, MainActivity.class);
+            startActivity(findMoviesIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_login){
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+
             return true;
         }
 

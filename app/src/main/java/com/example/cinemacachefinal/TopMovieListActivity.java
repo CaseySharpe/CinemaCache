@@ -22,6 +22,7 @@ public class TopMovieListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private MovieListAdapter movieListAdapter;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +36,43 @@ public class TopMovieListActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item){
         if (item.getItemId() == R.id.navigation_top_movies) {
             Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
             startActivity(movieListIntent);
-            finish();
             return true;
         }
-        else if (item.getItemId() == R.id.navigation_find_movies) {
-            Intent movieListIntent = new Intent(this, MainActivity.class);
+        else if (item.getItemId() == R.id.navigation_watchlist) {
+            Intent movieListIntent = new Intent(this, WatchListActivity.class);
+            movieListIntent.putExtra("username", user.getUsername());
             startActivity(movieListIntent);
             return true;
         }
+        else if(item.getItemId() == R.id.navigation_register){
+            Intent registerIntent = new Intent(this, RegisterActivity.class);
+            startActivity(registerIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_reviews){
+            Intent reviewIntent = new Intent(this, ReviewActivity.class);
+            startActivity(reviewIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_find_movies){
+            Intent findMoviesIntent = new Intent(this, MainActivity.class);
+            startActivity(findMoviesIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_login){
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+
+            return true;
+        }
+
         return false;
     }
 

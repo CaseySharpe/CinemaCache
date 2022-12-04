@@ -24,4 +24,14 @@
         android:icon="@drawable/ic_reviews_icon"
         android:title="@string/title_reviews"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/navigation_register"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/title_register"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/navigation_login"
+        android:title="@string/title_login" />
+
 </menu>
