@@ -13,7 +13,7 @@ TODO
 - Make movie poster clickable to go to details page
 - Make details page back button navigate to last page
 - log-in functionality
-  - setup for register and login is complete, but need to discuss navigation
+  
 
 
 
