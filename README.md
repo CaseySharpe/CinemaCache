@@ -13,6 +13,7 @@ TODO
 - Make movie poster clickable to go to details page
 - Make details page back button navigate to last page
 - log-in functionality
+  - Ananya - not sure how to change the title in the top menu bar for the login and register views
   
 
 
