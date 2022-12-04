@@ -9,6 +9,10 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,6 +28,7 @@ public class WatchListActivity extends AppCompatActivity {
         private MovieListAdapter movieListAdapter;
         private String usernameExtra;
         private ArrayList<String> userWatchList;
+        private User user;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +41,51 @@ public class WatchListActivity extends AppCompatActivity {
             movieListAdapter = new MovieListAdapter(this, getMovieList());
             recyclerView.setAdapter(movieListAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
         }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            if (item.getItemId() == R.id.navigation_top_movies) {
-                Intent movieListIntent = new Intent(this, com.example.cinemacachefinal.TopMovieListActivity.class);
-                startActivity(movieListIntent);
-                finish();
-                return true;
-            } else if (item.getItemId() == R.id.navigation_find_movies) {
-                Intent movieListIntent = new Intent(this, MainActivity.class);
-                startActivity(movieListIntent);
-                return true;
-            }
-            return false;
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if (item.getItemId() == R.id.navigation_top_movies) {
+            Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
+            startActivity(movieListIntent);
+            return true;
         }
+        else if (item.getItemId() == R.id.navigation_watchlist) {
+            Intent movieListIntent = new Intent(this, WatchListActivity.class);
+            movieListIntent.putExtra("username", user.getUsername());
+            startActivity(movieListIntent);
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_register){
+            Intent registerIntent = new Intent(this, RegisterActivity.class);
+            startActivity(registerIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_reviews){
+            Intent reviewIntent = new Intent(this, ReviewActivity.class);
+            startActivity(reviewIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_find_movies){
+            Intent findMoviesIntent = new Intent(this, MainActivity.class);
+            startActivity(findMoviesIntent);
+
+            return true;
+        }
+        else if(item.getItemId() == R.id.navigation_login){
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+
+            return true;
+        }
+
+        return false;
+    }
 
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
