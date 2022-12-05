@@ -26,12 +26,10 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/navigation_register"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/title_register"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/navigation_login"
-        android:title="@string/title_login" />
+        android:id="@+id/navigation_logout"
+        android:icon="@drawable/ic_logout_icon"
+        android:title="@string/log_out"
+        app:showAsAction="always" />
+
 
 </menu>

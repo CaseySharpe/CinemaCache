@@ -2,6 +2,7 @@ package com.example.cinemacachefinal;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,34 +14,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> {
-    private final ArrayList<Movie> mMovieList;
+public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.ReviewListViewHolder> {
+    private final ArrayList<Review> mReviewList;
     private final LayoutInflater mInflater;
     private final Context context;
 
-    public MovieListAdapter(Context context, ArrayList<Movie> mMovieList) {
+    public ReviewListAdapter(Context context, ArrayList<Review> mReviewList) {
         this.context = context;
-        this.mMovieList = mMovieList;
+        this.mReviewList = mReviewList;
         mInflater = LayoutInflater.from(context);
     }
 
 
-    public MovieListAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ReviewListAdapter.ReviewListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View mItemView = mInflater.inflate(R.layout.movie_list_item,
                 parent, false);
-        return new MovieViewHolder(mItemView, this);
+        return new ReviewListAdapter.ReviewListViewHolder(mItemView, this);
     }
 
-    public void onBindViewHolder(@NonNull MovieListAdapter.MovieViewHolder holder, int position) {
-        Movie movieData = mMovieList.get(position);
-        String movieTitle = movieData.getMovieTitle();
-        String description = movieData.getDescription();
-        String rating = movieData.getRating();
-        String genre = movieData.getGenre();
-        int posterID = movieData.getPosterID();
+    public void onBindViewHolder(@NonNull ReviewListViewHolder holder, int position) {
+        Review reviewData = mReviewList.get(position);
+        String movieTitle = reviewData.getMovie().getMovieTitle();
+        String description = reviewData.getReview();
+        String rating = reviewData.getRating();
+        int posterID = reviewData.getMovie().getPosterID();
         holder.movieTitleView.setText(movieTitle);
-        holder.movieGenreView.setText("Genre: " + genre);
-        holder.movieDescriptionView.setText("Description: " + description);
+        holder.movieGenreView.setText("");
         if (rating.equals("Four Stars")){
             holder.starFiveView.setVisibility(View.INVISIBLE);
         }
@@ -59,15 +58,16 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             holder.starThreeView.setVisibility(View.INVISIBLE);
             holder.starTwoView.setVisibility(View.INVISIBLE);
         }
+        holder.movieDescriptionView.setText("Review: " + description);
         holder.moviePosterView.setImageResource(posterID);
     }
 
     @Override
     public int getItemCount() {
-        return mMovieList.size();
+        return mReviewList.size();
     }
 
-    class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class ReviewListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView movieTitleView;
         public final ImageView moviePosterView;
         public final TextView movieDescriptionView;
@@ -77,10 +77,10 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         public final ImageView starThreeView;
         public final ImageView starFourView;
         public final ImageView starFiveView;
-        final MovieListAdapter mAdapter;
+        final ReviewListAdapter mAdapter;
 
 
-        public MovieViewHolder(@NonNull View itemView, MovieListAdapter adapter) {
+        public ReviewListViewHolder(@NonNull View itemView, ReviewListAdapter adapter) {
             super(itemView);
             movieTitleView = itemView.findViewById(R.id.movie_list_title);
             moviePosterView = itemView.findViewById(R.id.movie_poster);
@@ -99,16 +99,16 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         @Override
         public void onClick(View view) {
-                //gets the title of the movie clicked
-                TextView title = view.findViewById(R.id.movie_list_title);
-                String movieTitle = title.getText().toString();
-
+            //gets the title of the movie clicked;
+            int id = view.getId();
+            if (id == R.id.movie_list_title) {
+                String movieTitle = movieTitleView.getText().toString();
                 Intent myIntent = new Intent(context, DetailViewActivity.class);
                 //sends title of the clicked movie to display movie clicked to detail page activity
                 myIntent.putExtra("movie_title", movieTitle);
                 context.startActivity(myIntent);
             }
         }
+
     }
-
-
+}

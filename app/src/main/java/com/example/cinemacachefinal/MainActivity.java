@@ -1,6 +1,7 @@
 package com.example.cinemacachefinal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,22 +20,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private HashMap<String, Integer> genreOptions;
     private ArrayList<Movie> movieList;
-    private User user;
+
+    private SharedPreferences sharedPreferences;
+    public static final String SHARED_PREF_NAME = "USER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.user = getUserFromUsername("sampleuser");
+        sharedPreferences = getSharedPreferences(
+                SHARED_PREF_NAME,
+                MODE_PRIVATE);
+
         genreOptions = new HashMap<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -50,7 +53,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             c.setChecked(true);
         }
         findViewById(R.id.shuffle_button).setOnClickListener(this);
-        findViewById(R.id.add_to_watchlist_main).setOnClickListener(this);
+        findViewById(R.id.back_button_details).setOnClickListener(this);
+    }
+
+    private void addMovieToWatchList() {
+        TextView movieTitle = findViewById(R.id.movie_title);
+        String watchlist = sharedPreferences.getString("WATCHLIST", null);
+        String[] watchlistList = watchlist.split("-break-");
+        String newWatchList = "";
+        Boolean alreadyInWatchList = false;
+        for (String title : watchlistList) {
+            System.out.println(title);
+            if(title.equals(movieTitle.getText().toString())) {
+                Button button = findViewById(R.id.back_button_details);
+                Snackbar.make(button, R.string.already_in_watchlist_snackbar, Snackbar.LENGTH_LONG).show();
+                newWatchList = watchlist;
+                alreadyInWatchList = true;
+            }
+        }
+        if(!alreadyInWatchList){
+            newWatchList = watchlist + movieTitle.getText().toString() + "-break-";
+            Button button = findViewById(R.id.back_button_details);
+            Snackbar.make(button, R.string.add_watchlist_message, Snackbar.LENGTH_LONG).show();
+        }
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("WATCHLIST", newWatchList);
+        editor.apply();
+        System.out.println(sharedPreferences.getString("WATCHLIST", null));
     }
 
     private void updateMovieProfile() {
@@ -124,13 +153,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.shuffle_button) {
             updateMovieProfile();
         }
-        if (id == R.id.add_to_watchlist_main) {
-            TextView movieTitle = findViewById(R.id.movie_title);
-            if(!this.user.getUserWatchlist().contains(movieTitle.getText().toString())){
-                this.user.addToUserWatchlist(movieTitle.getText().toString());
-            }
-            Button button = findViewById(R.id.add_to_watchlist_main);
-            Snackbar.make(button, R.string.add_watchlist_message, Snackbar.LENGTH_LONG).show();
+        if (id == R.id.back_button_details) {
+            addMovieToWatchList();
         }
         //TODO send to details page when movie poster is clicked
 //        else if (id == R.id.moviePoster){
@@ -145,41 +169,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.navigation_top_movies) {
             Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
             startActivity(movieListIntent);
+            finish();
             return true;
         }
         else if (item.getItemId() == R.id.navigation_watchlist) {
             Intent movieListIntent = new Intent(this, WatchListActivity.class);
-            movieListIntent.putExtra("username", user.getUsername());
             startActivity(movieListIntent);
-            return true;
-        }
-        else if(item.getItemId() == R.id.navigation_register){
-            Intent registerIntent = new Intent(this, RegisterActivity.class);
-            startActivity(registerIntent);
-            
+            finish();
             return true;
         }
         else if(item.getItemId() == R.id.navigation_reviews){
-            Intent reviewIntent = new Intent(this, ReviewActivity.class);
+            Intent reviewIntent = new Intent(this, ReviewListActivity.class);
             startActivity(reviewIntent);
-
+            finish();
             return true;
         }
         else if(item.getItemId() == R.id.navigation_find_movies){
             Intent findMoviesIntent = new Intent(this, MainActivity.class);
             startActivity(findMoviesIntent);
-
+            finish();
             return true;
         }
-        else if(item.getItemId() == R.id.navigation_login){
+        else if(item.getItemId() == R.id.navigation_logout){
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
-
+            finish();
             return true;
         }
 
@@ -193,44 +213,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private String loadUserFromJSON() {
-        String json = null;
-        try {
-            InputStream inputStream = getAssets().open("Users.json");
-            int fileSize = inputStream.available();
-            byte[] bufferData = new byte[fileSize];
-            inputStream.read(bufferData);
-            json = new String(bufferData, "UTF-8");
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return json;
-    }
 
-    public User getUserFromUsername(String username) {
-        try {
-            JSONObject jsonObject = new JSONObject(loadUserFromJSON());
-            JSONArray jsonArray = jsonObject.getJSONArray("users");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject userData = jsonArray.getJSONObject(i);
-                String dataUsername = userData.getString("username");
-                if (username.equals(dataUsername)) {
-                    String password = userData.getString("password");
-                    JSONArray userWatchList = userData.getJSONArray("userWatchList");
-                    ArrayList<String> userWatchListArray = new ArrayList<>();
-                    for (int j = 0; j < userWatchList.length(); j++){
-                        userWatchListArray.add(userWatchList.getString(j));
-                    }
-                    User u = new User(username, password, userWatchListArray);
-                    return u;
-                }
-            }
-        } catch (
-                JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+
 }

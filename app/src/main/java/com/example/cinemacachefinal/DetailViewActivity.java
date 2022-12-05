@@ -3,13 +3,17 @@ package com.example.cinemacachefinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,25 +26,36 @@ public class DetailViewActivity extends AppCompatActivity implements View.OnClic
 
     String selectedMovieExtra;
     Movie selectedMovie;
-    private User user;
+
+
+    private SharedPreferences sharedPreferences;
+    public static final String SHARED_PREF_NAME = "USER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_view);
+            sharedPreferences = getSharedPreferences(
+                    SHARED_PREF_NAME,
+                    MODE_PRIVATE);
         selectedMovieExtra = getIntent().getStringExtra("movie_title");
         selectedMovie = getSelectedMovie();
 
         TextView movieTitleView = findViewById(R.id.detail_movie_title);
         ImageView moviePosterView = findViewById(R.id.detail_movie_poster);
         TextView movieDescriptionView = findViewById(R.id.detail_movie_description);
+        TextView movieDirectorView = findViewById(R.id.detail_movie_director);
         TextView movieGenreView = findViewById(R.id.detail_movie_genre);
         TextView movieRatingView = findViewById(R.id.detail_movie_rating);
-        movieTitleView.setText(selectedMovie.getMovieTitle());
-        movieDescriptionView.setText(selectedMovie.getDescription());
-        movieGenreView.setText(selectedMovie.getGenre());
-        movieRatingView.setText(selectedMovie.getRating());
         moviePosterView.setImageResource(selectedMovie.getPosterID());
+        movieTitleView.setText(selectedMovie.getMovieTitle());
+        movieDirectorView.setText("Director: " + selectedMovie.getDirector());
+        movieDescriptionView.setText("Description: " + selectedMovie.getDescription());
+        movieGenreView.setText("Genre: " + selectedMovie.getGenre());
+        movieRatingView.setText("Rating: " + selectedMovie.getRating());
+        findViewById(R.id.review_button).setOnClickListener(this);
+        findViewById(R.id.back_button_details).setOnClickListener(this);
+        findViewById(R.id.add_to_watchlist).setOnClickListener(this);
 
     }
 
@@ -49,36 +64,31 @@ public class DetailViewActivity extends AppCompatActivity implements View.OnClic
         if (item.getItemId() == R.id.navigation_top_movies) {
             Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
             startActivity(movieListIntent);
+            finish();
             return true;
         }
         else if (item.getItemId() == R.id.navigation_watchlist) {
             Intent movieListIntent = new Intent(this, WatchListActivity.class);
-            movieListIntent.putExtra("username", user.getUsername());
             startActivity(movieListIntent);
-            return true;
-        }
-        else if(item.getItemId() == R.id.navigation_register){
-            Intent registerIntent = new Intent(this, RegisterActivity.class);
-            startActivity(registerIntent);
-
+            finish();
             return true;
         }
         else if(item.getItemId() == R.id.navigation_reviews){
-            Intent reviewIntent = new Intent(this, ReviewActivity.class);
+            Intent reviewIntent = new Intent(this, ReviewListActivity.class);
             startActivity(reviewIntent);
-
+            finish();
             return true;
         }
         else if(item.getItemId() == R.id.navigation_find_movies){
             Intent findMoviesIntent = new Intent(this, MainActivity.class);
             startActivity(findMoviesIntent);
-
+            finish();
             return true;
         }
-        else if(item.getItemId() == R.id.navigation_login){
+        else if(item.getItemId() == R.id.navigation_logout){
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
-
+            finish();
             return true;
         }
 
@@ -95,11 +105,44 @@ public class DetailViewActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.add_to_watchlist_main) {
-            Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
-            startActivity(movieListIntent);
+        if (id == R.id.add_to_watchlist) {
+            addMovieToWatchList();
+        }
+        else if (id == R.id.review_button) {
+            Intent reviewIntent = new Intent(this, ReviewActivity.class);
+            reviewIntent.putExtra("movie_title", selectedMovie.getMovieTitle());
+            startActivity(reviewIntent);
             finish();
         }
+        else if (id == R.id.back_button_details){
+            finish();
+        }
+    }
+
+    private void addMovieToWatchList() {
+        TextView movieTitle = findViewById(R.id.detail_movie_title);
+        String watchlist = sharedPreferences.getString("WATCHLIST", null);
+        String[] watchlistList = watchlist.split("-break-");
+        String newWatchList = "";
+        Boolean alreadyInWatchList = false;
+        for (String title : watchlistList) {
+            System.out.println(title);
+            if(title.equals(movieTitle.getText().toString())) {
+                Button button = findViewById(R.id.back_button_details);
+                Snackbar.make(button, R.string.already_in_watchlist_snackbar, Snackbar.LENGTH_LONG).show();
+                newWatchList = watchlist;
+                alreadyInWatchList = true;
+            }
+        }
+        if(!alreadyInWatchList){
+            newWatchList = watchlist + movieTitle.getText().toString() + "-break-";
+            Button button = findViewById(R.id.back_button_details);
+            Snackbar.make(button, R.string.add_watchlist_message, Snackbar.LENGTH_LONG).show();
+        }
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("WATCHLIST", newWatchList);
+        editor.apply();
+        System.out.println(sharedPreferences.getString("WATCHLIST", null));
     }
 
     public Movie getSelectedMovie() {

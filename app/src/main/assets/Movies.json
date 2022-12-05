@@ -5,7 +5,7 @@
       "releaseDate": "September 22, 1994",
       "director": "Frank Darabont",
       "description": "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes. While there, he forms a friendship with Red (Morgan Freeman), experiences brutality of prison life, adapts, helps the warden, etc., all in 19 years.",
-      "rating": "5",
+      "rating": "Five Stars",
       "genre": "Drama",
       "profileFileName": "shawshank_poster"
     },
@@ -14,7 +14,7 @@
       "releaseDate": "March 31, 1999",
       "director": "Lilly Wachowski",
       "description": "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
-      "rating": "5",
+      "rating": "Four Stars",
       "genre": "Action",
       "profileFileName": "matrix_poster"
     },
@@ -23,7 +23,7 @@
       "releaseDate": "April 28, 2011",
       "director": "Paul Feig",
       "description": "Annie (Kristen Wiig) is a single woman whose own life is a mess, but when she learns that her lifelong best friend, Lillian (Maya Rudolph), is engaged, she has no choice but to serve as the maid of honor. Though lovelorn and almost penniless, Annie, nevertheless, winds her way through the strange and expensive rituals associated with her job as the bride's go-to gal. Determined to make things perfect, she gamely leads Lillian and the other bridesmaids down the wild road to the wedding.",
-      "rating": "5",
+      "rating": "Five Stars",
       "genre": "Comedy",
       "profileFileName": "bridesmaids_poster"
     },
@@ -32,7 +32,7 @@
       "releaseDate": "September 19, 1990",
       "director": "Martin Scorsese",
       "description": "A young man grows up in the mob and works very hard to advance himself through the ranks. He enjoys his life of money and luxury, but is oblivious to the horror that he causes. A drug addiction and a few mistakes ultimately unravel his climb to the top. Based on the book Wiseguy by Nicholas Pileggi.",
-      "rating": "5",
+      "rating": "Five Stars",
       "genre": "Drama",
       "profileFileName": "good_fellas_poster"
     },
@@ -41,7 +41,7 @@
       "releaseDate": "October 25, 1978",
       "director": "John Carpenter",
       "description": "On a cold Halloween night in 1963, six year old Michael Myers brutally murdered his 17-year-old sister, Judith. He was sentenced and locked away for 15 years. But on October 30, 1978, while being transferred for a court date, a 21-year-old Michael Myers steals a car and escapes Smith's Grove. He returns to his quiet hometown of Haddonfield, Illinois, where he looks for his next victims.",
-      "rating": "5",
+      "rating": "Five Stars",
       "genre": "Horror",
       "profileFileName": "halloween_poster"
     },
@@ -50,7 +50,7 @@
       "releaseDate": "December 18, 1985",
       "director": "Steven Spielberg",
       "description": "An epic tale spanning forty years in the life of Celie (Whoopi Goldberg), an African-American woman living in the South who survives incredible abuse and bigotry. After Celie's abusive father marries her off to the equally debasing Mister Albert Johnson (Danny Glover), things go from bad to worse, leaving Celie to find companionship anywhere she can. She perseveres, holding on to her dream of one day being reunited with her sister in Africa. Based on the novel by Alice Walker.",
-      "rating": "5",
+      "rating": "Five Stars",
       "genre": "Drama",
       "profileFileName": "color_purple_poster"
     },
@@ -59,7 +59,7 @@
       "releaseDate": "March 28, 2003",
       "director": "Hayao Miyazaki",
       "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
-      "rating": "8.6",
+      "rating": "Three Stars",
       "imageID": "1",
       "genre": "Action",
       "profileFileName": "spirited_away_poster"
@@ -70,7 +70,7 @@
       "releaseDate": "July 15, 2022",
       "director": "Olivia Newman",
       "description": "From the best-selling novel comes a captivating mystery. Where the Crawdads Sing tells the story of Kya, an abandoned girl who raised herself to adulthood in the dangerous marshlands of North Carolina.",
-      "rating": "7.1",
+      "rating": "Four Stars",
       "imageID": "1",
       "genre": "Drama",
       "profileFileName": "where_crawdads_poster"
@@ -81,7 +81,7 @@
       "releaseDate": "November 7, 2014",
       "director": "Christopher Nolan",
       "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-      "rating": "8.6",
+      "rating": "Four Stars",
       "imageID": "1",
       "genre": "Scifi",
       "profileFileName": "interstellar_poster"
@@ -92,7 +92,7 @@
       "releaseDate": "July 26, 1989",
       "director": "Isao Takahata",
       "description": "A young boy and his little sister struggle to survive in Japan during World War II.",
-      "rating": "8.5",
+      "rating": "Five Stars",
       "imageID": "1",
       "genre": "Drama",
       "profileFileName": "grave_fireflies_poster"
@@ -103,7 +103,7 @@
       "releaseDate": "September 2, 1992",
       "director": "Quentin Tarantino",
       "description": "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
-      "rating": "8.3",
+      "rating": "Three Stars",
       "imageID": "1",
       "genre": "Horror",
       "profileFileName": "reservoir_dogs_poster"
@@ -114,7 +114,7 @@
       "releaseDate": "May 29, 2009",
       "director": "Pete Docter",
       "description": "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.",
-      "rating": "8.3",
+      "rating": "Four Stars",
       "imageID": "1",
       "genre": "Comedy",
       "profileFileName": "up_poster"
@@ -125,7 +125,7 @@
       "releaseDate": "February 9, 1976",
       "director": "Martin Scorsese",
       "description": "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action.",
-      "rating": "8.2",
+      "rating": "Three Stars",
       "imageID": "1",
       "genre": "Drama",
       "profileFileName": "taxi_driver_poster"
@@ -136,7 +136,7 @@
       "releaseDate": "June 15, 2005",
       "director": "Christopher Nolan",
       "description": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption.",
-      "rating": "8.2",
+      "rating": "Five Stars",
       "imageID": "1",
       "genre": "Action",
       "profileFileName": "batman_begins_poster"
@@ -147,7 +147,7 @@
       "releaseDate": "August 6, 1999",
       "director": "M. Night Shyamalan",
       "description": "A frightened, withdrawn Philadelphia boy who communicates with spirits seeks the help of a disheartened child psychologist.",
-      "rating": "8.2",
+      "rating": "Five Stars",
       "imageID": "1",
       "genre": "Horror",
       "profileFileName": "sixth_sense_poster"
@@ -159,7 +159,7 @@
       "releaseDate": "September 20, 2013",
       "director": "Denis Villeneuve",
       "description": "When Keller Dover's daughter and her friend go missing, he takes matters into his own hands as the police pursue multiple leads and the pressure mounts.",
-      "rating": "8.1",
+      "rating": "Four Stars",
       "imageID": "1",
       "genre": "Drama",
       "profileFileName": "prisoners_poster"
@@ -170,7 +170,7 @@
       "releaseDate": "March 28, 2014",
       "director": "Wes Anderson",
       "description": "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.",
-      "rating": "8.1",
+      "rating": "Five Stars",
       "imageID": "1",
       "genre": "Action",
       "profileFileName": "grand_budapest_poster"
@@ -180,7 +180,7 @@
       "releaseDate": "March 26, 2010",
       "director": "Dean DeBlois",
       "description": "A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.",
-      "rating": "8.1",
+      "rating": "Four Stars",
       "imageID": "1",
       "genre": "Comedy",
       "profileFileName": "train_dragon_poster"
