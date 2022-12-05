@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lt_green">#94D569</color>
     <color name="drk_gray">#383838</color>
+    <color name="lt_gray">#5C5C5C</color>
+
 </resources>

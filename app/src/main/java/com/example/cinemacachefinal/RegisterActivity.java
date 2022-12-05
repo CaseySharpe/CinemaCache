@@ -3,101 +3,82 @@ package com.example.cinemacachefinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     private static final String TAG = "RegisterActivity";
-    private User user;
 
+
+    private SharedPreferences sharedPreferences;
+    public static final String SHARED_PREF_NAME = "USER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        findViewById(R.id.button_register).setOnClickListener(this);
-        findViewById(R.id.button_cancel_registration).setOnClickListener(this);
+        findViewById(R.id.cancel_registration_button).setOnClickListener(this);
+        findViewById(R.id.register_button).setOnClickListener(this);
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if (item.getItemId() == R.id.navigation_top_movies) {
-            Intent movieListIntent = new Intent(this, TopMovieListActivity.class);
-            startActivity(movieListIntent);
-            return true;
-        }
-        else if (item.getItemId() == R.id.navigation_watchlist) {
-            Intent movieListIntent = new Intent(this, WatchListActivity.class);
-            movieListIntent.putExtra("username", user.getUsername());
-            startActivity(movieListIntent);
-            return true;
-        }
-        else if(item.getItemId() == R.id.navigation_register){
-            Intent registerIntent = new Intent(this, RegisterActivity.class);
-            startActivity(registerIntent);
-
-            return true;
-        }
-        else if(item.getItemId() == R.id.navigation_reviews){
-            Intent reviewIntent = new Intent(this, ReviewActivity.class);
-            startActivity(reviewIntent);
-
-            return true;
-        }
-        else if(item.getItemId() == R.id.navigation_find_movies){
-            Intent findMoviesIntent = new Intent(this, MainActivity.class);
-            startActivity(findMoviesIntent);
-
-            return true;
-        }
-        else if(item.getItemId() == R.id.navigation_login){
-            Intent loginIntent = new Intent(this, LoginActivity.class);
-            startActivity(loginIntent);
-
-            return true;
-        }
-
-        return false;
-    }
 
     @Override
     public void onClick(View view){
         int id = view.getId();
-
-        if(id == R.id.button_cancel_registration){
-            Log.d(TAG, "Cancel button clicked");
+        ArrayList<EditText> textFields = new ArrayList<>();
+        EditText firstNameField = findViewById(R.id.editFirstName);
+        textFields.add(firstNameField);
+        EditText lastNameField = findViewById(R.id.editLastName);
+        textFields.add(lastNameField);
+        EditText emailField = findViewById(R.id.editTextEmail);
+        textFields.add(emailField);
+        EditText passwordField = findViewById(R.id.editTextPassword);
+        textFields.add(passwordField);
+        if(id == R.id.cancel_registration_button){
             finish();
         }
-        else if(id == R.id.button_register){
-
-            Button button = findViewById(R.id.button_register);
-            Snackbar.make(button, R.string.register_complete, Snackbar.LENGTH_LONG).show();
-
-
-        } else{
-            //TODO - Need to validate that fields are filled in
-            AlertDialog.Builder d = new AlertDialog.Builder(this);
-            d.setTitle(R.string.register_error_title);
-            d.setMessage(R.string.register_error_message);
-            d.setPositiveButton(android.R.string.ok, null);
-            d.show();
+        else if(id == R.id.register_button){
+            boolean emptyFields = false;
+            for(EditText textField : textFields){
+                if(textField.getText().toString().isEmpty()){
+                    emptyFields = true;
+                    AlertDialog.Builder d = new AlertDialog.Builder(this);
+                    d.setTitle(R.string.register_error_title);
+                    d.setMessage(R.string.register_error_message);
+                    d.setPositiveButton(android.R.string.ok, null);
+                    d.show();
+                }
+            }
+            if(!emptyFields){
+                Random r = new Random();
+                saveUserInformation(firstNameField.getText().toString(), lastNameField.getText().toString(), emailField.getText().toString(), passwordField.getText().toString());
+                Button button = findViewById(R.id.cancel_registration_button);
+                Snackbar.make(button, R.string.register_complete, Snackbar.LENGTH_LONG).show();
+                finish();
+            }
         }
+    }
+
+    public void saveUserInformation(String firstName, String lastName, String email, String password) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("EMAIL", email);
+        editor.putString("PASSWORD", password);
+        editor.putString("FIRSTNAME", firstName);
+        editor.putString("LASTNAME", lastName);
+        editor.putString("WATCHLIST", "");
+        editor.putString("REVIEWS", "");
+        editor.apply();
     }
 
 

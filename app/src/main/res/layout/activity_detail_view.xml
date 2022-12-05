@@ -105,11 +105,11 @@
         android:layout_marginBottom="160dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/movie_info_layout"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movie_info_layout">
 
         <Button
-            android:id="@+id/add_to_watchlist_main"
+            android:id="@+id/back_button_details"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,13 +124,29 @@
             app:iconTint="?attr/actionMenuTextColor" />
 
         <Button
-            android:id="@+id/watchlist_button2"
+            android:id="@+id/review_button"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginBottom="70dp"
-            android:layout_weight="1"
+            android:layout_weight="0"
+            android:backgroundTint="@color/lt_green"
+            android:onClick="onClick"
+            android:text="@string/review_label"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:iconTint="?attr/actionMenuTextColor" />
+
+        <Button
+            android:id="@+id/add_to_watchlist"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="70dp"
+            android:layout_weight="0"
             android:backgroundTint="@color/lt_green"
             android:text="@string/add_to_watchlist_button"
             android:textColor="@color/black"
@@ -138,6 +154,5 @@
             android:textStyle="bold"
             app:iconTint="?attr/actionMenuTextColor" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
