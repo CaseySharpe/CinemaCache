@@ -14,7 +14,7 @@ TODO
 - Make details page back button navigate to last page
 - log-in functionality
   - Ananya - not sure how to change the title in the top menu bar for the login and register views
-  
+  - Fix being able to go back after logging out
 
 
 
