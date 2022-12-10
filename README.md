@@ -4,6 +4,9 @@ ACCESSIBILITY
 - CinemaCache image for login and register screens (the big one under the app header) has a low contrast ratio and comes up in Android Studios accessibility checker. 
 Consider deleting. 
 
+ISSUES
+- Ananya - In the review list, for some reason on my system, it says "Rati:" followed by the stars. Not sure why "ng" is being cut off. 
+
 TODO
 - Data is poorly managed
   - movies can probably be read from a json but we need to add more
