@@ -1,5 +1,9 @@
 # CinemaCache
 
+ACCESSIBILITY
+- CinemaCache image for login and register screens (the big one under the app header) has a low contrast ratio and comes up in Android Studios accessibility checker. 
+Consider deleting. 
+
 TODO
 - Data is poorly managed
   - movies can probably be read from a json but we need to add more
