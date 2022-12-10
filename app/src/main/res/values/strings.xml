@@ -39,7 +39,8 @@
         <string name="password_label">Password</string>
         <string name="first_name_hint">First name</string>
         <string name="last_name_hint">Last name</string>
-        <string name="email_hint">Email</string>
+        <string name="email_hint">abc123@email.com</string>
+        <string name="password_hint">Password</string>
         <string name="register_button">Register</string>
         <string name="login_button">Login</string>
         <string name="button_cancel_login">Cancel</string>
@@ -47,9 +48,12 @@
         <string name="login_error_title">Unable to login</string>
         <string name="login_error_message">Please check your email and password and try again.</string>
 
+        <string name="logo_cd">Cinema Cache</string>
+
         <string name="genre_label">Genre</string>
         <string name="rating_label">Rating</string>
         <string name="description_label">Description</string>
+        <string name="star_rating_hint">What is your star rating of this movie?</string>
         <string name="rating_hint">What did you think of the movie?</string>
         <string name="review_label">Review</string>
         <string name="now_reviewing_label">Now Reviewing</string>
