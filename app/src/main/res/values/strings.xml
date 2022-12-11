@@ -49,6 +49,8 @@
         <string name="login_error_message">Please check your email and password and try again.</string>
 
         <string name="logo_cd">Cinema Cache</string>
+        <string name="matrix_cd">Movie poster for The Matrix</string>
+        <string name="goodfellas_cd">Movie poster for the Goodfellas</string>
 
         <string name="genre_label">Genre</string>
         <string name="rating_label">Rating</string>
@@ -68,8 +70,16 @@
                 <item>Five Stars</item>
         </string-array>
 
+        <string name="onestar_cd">One star</string>
+        <string name="twostar_cd">One star</string>
+        <string name="threestar_cd">One star</string>
+        <string name="fourstar_cd">One star</string>
+        <string name="fivestar_cd">One star</string>
+
         <string name="added_to_watchlist_snackbar">Movie added to Watchlist!</string>
         <string name="added_to_reviews_snackbar">Movie review added</string>
         <string name="already_in_watchlist_snackbar">Movie has already been added to Watchlist</string>
+
+
 
 </resources>

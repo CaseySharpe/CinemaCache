@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:adjustViewBounds="true"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/goodfellas_cd"
         android:cropToPadding="false"
         android:maxHeight="310dp"
         android:scaleType="fitStart"
@@ -78,6 +78,7 @@
                 android:layout_height="22dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/onestar_cd"
                 app:srcCompat="@drawable/ic_star_icon" />
 
             <ImageView
@@ -86,6 +87,7 @@
                 android:layout_height="22dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/twostar_cd"
                 app:srcCompat="@drawable/ic_star_icon" />
 
             <ImageView
@@ -94,6 +96,7 @@
                 android:layout_height="22dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/threestar_cd"
                 app:srcCompat="@drawable/ic_star_icon" />
 
             <ImageView
@@ -102,6 +105,7 @@
                 android:layout_height="22dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/fourstar_cd"
                 app:srcCompat="@drawable/ic_star_icon" />
 
             <ImageView
@@ -110,6 +114,7 @@
                 android:layout_height="22dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/fivestar_cd"
                 app:srcCompat="@drawable/ic_star_icon" />
 
         </LinearLayout>
