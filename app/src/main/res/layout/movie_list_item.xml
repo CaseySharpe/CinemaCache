@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/goodfellas_cd"
+        android:contentDescription="@string/genericPoster_cd"
         android:cropToPadding="false"
         android:maxHeight="310dp"
         android:scaleType="fitStart"
