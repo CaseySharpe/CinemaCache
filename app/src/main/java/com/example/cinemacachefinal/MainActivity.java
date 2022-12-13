@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.imageview.ShapeableImageView;
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void updateMovieProfile() {
         boolean validMovie = false;
+        int loopCount = 0;
         while (!validMovie) {
             int index = (int) (Math.random() * movieList.size());
             Movie m = movieList.get(index);
@@ -91,6 +93,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (c.isChecked()) {
                 showMovieProfile(m);
                 validMovie = true;
+            }
+            loopCount++;
+            if (loopCount > 20) {
+                // If infinite loop display alert dialog
+                validMovie = true;
+                AlertDialog.Builder d = new AlertDialog.Builder(this);
+                d.setTitle("Unable to shuffle");
+                d.setMessage("Please check that you have a genre selected and try again.");
+                d.setPositiveButton(android.R.string.ok, null);
+                d.show();
             }
         }
     }
