@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/logo_cd"
             android:cropToPadding="true"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/cinemacache_logo_light" />
@@ -66,9 +67,11 @@
         android:ems="10"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
+        android:textColorHint="#757575"
         app:layout_constraintBaseline_toBaselineOf="@+id/email_label"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -78,8 +81,12 @@
         android:ems="10"
         android:hint="@string/password_label"
         android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
         app:layout_constraintBaseline_toBaselineOf="@+id/password_label"
-        app:layout_constraintEnd_toEndOf="@+id/editTextEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/password_label"
@@ -91,17 +98,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/button_cancel_login"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:adjustViewBounds="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo_frame"
-        app:srcCompat="@drawable/cinemacache_logo_dark" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

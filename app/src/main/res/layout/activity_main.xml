@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/logo_cd"
             android:cropToPadding="true"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/cinemacache_logo_light" />
@@ -37,6 +38,7 @@
         android:layout_width="190dp"
         android:layout_height="261dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/genericPoster_cd"
         android:src="@drawable/matrix_poster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

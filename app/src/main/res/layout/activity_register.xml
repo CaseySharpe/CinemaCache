@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/logo_cd"
             android:cropToPadding="true"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/cinemacache_logo_light" />
@@ -96,9 +97,11 @@
         android:ems="10"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
+        android:textColorHint="#757575"
         app:layout_constraintBaseline_toBaselineOf="@+id/email_label"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editLastName"
@@ -108,9 +111,11 @@
         android:ems="10"
         android:hint="@string/last_name_hint"
         android:inputType="textEmailAddress"
+        android:textColorHint="#757575"
         app:layout_constraintBaseline_toBaselineOf="@+id/last_name_label"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editFirstName"
@@ -120,9 +125,11 @@
         android:ems="10"
         android:hint="@string/first_name_hint"
         android:inputType="textEmailAddress"
+        android:textColorHint="#757575"
         app:layout_constraintBaseline_toBaselineOf="@+id/first_name_label"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -132,8 +139,11 @@
         android:hint="@string/password_label"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColorHint="#757575"
         app:layout_constraintBaseline_toBaselineOf="@+id/password_label"
-        app:layout_constraintEnd_toEndOf="@+id/editTextEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:importantForAutofill="no" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

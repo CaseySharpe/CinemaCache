@@ -5,30 +5,35 @@
         android:id="@+id/navigation_top_movies"
         android:icon="@drawable/ic_top_movie_icon"
         android:title="@string/title_top_movies"
+        android:focusable="true"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/navigation_find_movies"
         android:icon="@drawable/ic_find_movies_icon"
         android:title="@string/title_find_movies"
+        android:focusable="true"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/navigation_watchlist"
         android:icon="@drawable/ic_watchlist_icon"
         android:title="@string/title_watchlist"
+        android:focusable="true"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/navigation_reviews"
         android:icon="@drawable/ic_reviews_icon"
         android:title="@string/title_reviews"
+        android:focusable="true"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/navigation_logout"
         android:icon="@drawable/ic_logout_icon"
         android:title="@string/log_out"
+        android:focusable="true"
         app:showAsAction="always" />
 
 
