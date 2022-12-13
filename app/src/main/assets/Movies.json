@@ -184,6 +184,16 @@
       "imageID": "1",
       "genre": "Comedy",
       "profileFileName": "train_dragon_poster"
+    },
+    {
+      "movieTitle": "The Notebook",
+      "releaseDate": "June 25 2004",
+      "director": "Nick Cassavetes",
+      "description": "A poor yet passionate young man (Ryan Gosling) falls in love with a rich young woman (Rachel McAdams), giving her a sense of freedom, but they are soon separated because of their social differences.",
+      "rating": "Four Stars",
+      "imageID": "1",
+      "genre": "Romance",
+      "profileFileName":"the_notebook_poster"
     }
   ]
 }
