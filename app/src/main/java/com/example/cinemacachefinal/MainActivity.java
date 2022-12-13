@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 validMovie = true;
             }
             loopCount++;
-            if (loopCount > 20) {
+            if (loopCount > 500) {
                 // If infinite loop display alert dialog
                 validMovie = true;
                 AlertDialog.Builder d = new AlertDialog.Builder(this);
