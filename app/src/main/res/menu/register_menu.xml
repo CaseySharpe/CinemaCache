@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_register"
+        android:contentDescription="@string/register_label"
         android:icon="@drawable/ic_register_user_icon"
         android:title="@string/title_register"
         app:showAsAction="always|withText" />
